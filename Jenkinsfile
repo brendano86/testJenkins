@@ -5,6 +5,7 @@ node { // <1>
     }
     stage('Test') {
         echo 'Starting test phase'
+        echo env.WORKSPACE
         sh 'MOCHA_FILE=./jenkins-test-results.xml mocha --reporter mocha-junit-reporter'
     }
     stage('Deploy') {
