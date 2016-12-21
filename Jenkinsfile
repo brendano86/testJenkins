@@ -4,7 +4,8 @@ node { // <1>
         sh 'npm install'
     }
     stage('Test') {
-        /* .. snip .. */
+        echo 'Starting test phase'
+        MOCHA_FILE=./jenkins-test-results.xml mocha --reporter mocha-junit-reporter
     }
     stage('Deploy') {
         /* .. snip .. */
