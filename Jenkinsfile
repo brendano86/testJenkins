@@ -1,4 +1,12 @@
-node {
-    echo env.BUILD_ID
-    echo 'Hello World'
+node { // <1>
+    stage('Build') {
+        echo 'Starting build phase'
+        sh 'npm install'
+    }
+    stage('Test') {
+        /* .. snip .. */
+    }
+    stage('Deploy') {
+        /* .. snip .. */
+    }
 }
